@@ -1,0 +1,19 @@
+{
+  "name": "hookscope",
+  "version": "1.0.0",
+  "description": "Offline phishing email (.eml) analyzer that runs fully in the browser. No uploads, no API keys.",
+  "type": "module",
+  "bin": {
+    "hookscope": "cli/hookscope.mjs"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "serve": "node cli/serve.mjs",
+    "scan": "node cli/hookscope.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": ["phishing", "email", "eml", "security", "soc", "blue-team", "dfir", "ioc", "spf", "dkim", "dmarc", "malaysia"],
+  "license": "MIT"
+}

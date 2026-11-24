@@ -1,0 +1,66 @@
+Received: from mail-wr1-f41.google.example (mail-wr1-f41.google.example [209.85.221.41])
+	by mx.kedaiabc.example with ESMTPS; Wed, 18 Nov 2026 15:22:10 +0800
+Authentication-Results: mx.kedaiabc.example;
+	spf=pass smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com;
+	dmarc=pass header.from=gmail.com
+From: "Datuk Hafiz (CEO) hafiz@kedaiabc.example" <datukhafiz.ceo@gmail.com>
+Reply-To: <accounts.kedaiabc@protonmail.com>
+To: finance@kedaiabc.example
+Subject: Urgent - new bank account for supplier payment
+Date: Wed, 18 Nov 2026 15:22:01 +0800
+Message-ID: <CAF88x2kK@mail.gmail.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="000000000000c0ffee"
+
+--000000000000c0ffee
+Content-Type: text/plain; charset="UTF-8"
+
+Hi,
+
+I am in a meeting now and cannot talk. Please process the supplier payment today
+to the new bank account in the attached file. Keep this confidential until the deal is announced.
+The archive password is 8842.
+
+Thanks
+Datuk Hafiz
+
+--000000000000c0ffee
+Content-Type: application/vnd.ms-word.document.macroEnabled.12; name="Payment_Details.docm"
+Content-Disposition: attachment; filename="Payment_Details.docm"
+Content-Transfer-Encoding: base64
+
+UEsDBBQAAAAIAPdceF1W4zNKqQAAANcAAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbD3OQU7EMAyF
+4atU2aLGZRYsUNtZjNgCCy5gEk8bEdtR4inl9qggzQG+/73xvHPuNqotqUzu0Q/uPI8fP4Vat3OW
+NrnVrDwDtLASY/NaSHbOV62M1rzWBQqGL1wITsPwBEHFSKy3o+Hm8W2jWlOk7h2rvSLT5OBba4So
+4cYk5nfOrrv8s2N5clhKTgEtqcAm0XPrD+LvhDFUfRH8zBQ9Y5KHIwLzCH/X519QSwMEFAAAAAgA
+91x4XV8zlVKXAAAABwEAAAsAAABfcmVscy8ucmVsc43PsQ7CIBQF0F8h7wP6WgcHU9rFpavpDxB4
+bYnAI4CKf+/iYI2D683Nubn9WL0Td0rZcpDQNS2MQ38hp4rlkDcbs6jehSxhKyWeELPeyKvccKRQ
+vVs4eVVyw2nFqPRVrYSHtj1i+jRgb4rJSEiT6UDMz0j/2LwsVtOZ9c1TKD8mvhogZpVWKhIenAya
+d9xU7wCHHncXhxdQSwMEFAAAAAgA91x4XU6wny6VAAAAywAAABEAAAB3b3JkL2RvY3VtZW50Lnht
+bEXOQQ7CIBAF0KsQDgDVhYumrSsPQsvYEmGGMGOptzfUhZv3Nz8/f7gfKaodCgfCUV9Mp+/TUHtP
+yzsBijpSRO7rqDeR3FvLywbJsaEMeKT4pJKcsKGy2krF50ILMAdcU7TXrrvZ5ALqNjmT/7TMjdKQ
+6YFujqDABwm4KiG1B6hqdvhSHsSFyGawrdksp/n0t2b/T6cvUEsDBBQAAAAIAPdceF2xLR7avgAA
+ADoBAAAcAAAAd29yZC9fcmVscy9zZXR0aW5ncy54bWwucmVsc43QTUoEMRAF4KuEOkCqe1odlO6e
+jS5m4Ub6AkVS/YNJKiSl9NxeBBUHXLh/73vw+tMeg3nnUjdJA7S2gdPYv3Ag3STVdcvV7DGkOsCq
+mh8Qq1s5UrWSOe0xzFIiabVSFszkXmlhPDTNHZbfBlyb5uwHKGffdt0RzHTJ/B9e5nlz/CjuLXLS
+P1aQVMmt7CeOOZAymInKwvqj39zatjvaQ2vvUb9CFTNdPkXrReN35Vk8D/C0K5dEAXDs8eqV8QNQ
+SwMEFAAAAAgA91x4XbLduAFNAAAAlAAAABMAAAB3b3JkL3ZiYVByb2plY3QuYmlupcZBDcJAEADA
+scC3rxVQIfyr4NJc0qQtS+5qCAkoAQnFCQkWmNe8X5fz8Rw+/nSV0moyS3dVWBTNblN1XTh+O4zC
+TQpNVWzCrpg16QtQSwECFAMUAAAACAD3XHhdVuMzSqkAAADXAAAAEwAAAAAAAAAAAAAAgAEAAAAA
+W0NvbnRlbnRfVHlwZXNdLnhtbFBLAQIUAxQAAAAIAPdceF1fM5VSlwAAAAcBAAALAAAAAAAAAAAA
+AACAAdoAAABfcmVscy8ucmVsc1BLAQIUAxQAAAAIAPdceF1OsJ8ulQAAAMsAAAARAAAAAAAAAAAA
+AACAAZoBAAB3b3JkL2RvY3VtZW50LnhtbFBLAQIUAxQAAAAIAPdceF2xLR7avgAAADoBAAAcAAAA
+AAAAAAAAAACAAV4CAAB3b3JkL19yZWxzL3NldHRpbmdzLnhtbC5yZWxzUEsBAhQDFAAAAAgA91x4
+XbLduAFNAAAAlAAAABMAAAAAAAAAAAAAAIABVgMAAHdvcmQvdmJhUHJvamVjdC5iaW5QSwUGAAAA
+AAUABQBEAQAA1AMAAAAA
+--000000000000c0ffee
+Content-Type: application/zip; name="Invoice_8842.zip"
+Content-Disposition: attachment; filename*=UTF-8''Invoice_8842.zip
+Content-Transfer-Encoding: base64
+
+UEsDBBQAAQAAAPdceF2LlQ3MMAAAADAAAAAUAAAASW52b2ljZV84ODQyLnBkZi5leGVIb29rU2Nv
+cGUgaGFybWxlc3MgdGVzdCBmaWxlLCBub3QgYSByZWFsIHByb2dyYW1QSwECFAMUAAEAAAD3XHhd
+i5UNzDAAAAAwAAAAFAAAAAAAAAAAAAAAgAEAAAAASW52b2ljZV84ODQyLnBkZi5leGVQSwUGAAAA
+AAEAAQBCAAAAYgAAAAAA
+--000000000000c0ffee--

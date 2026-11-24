@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <title>HookScope | Offline phishing email analyzer</title>
+  <meta name="description" content="Drop in a suspicious .eml file and get a clear phishing verdict. Runs fully in your browser. No uploads, no API keys.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="module" src="src/app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap masthead-in">
+      <a class="brand" href="./">
+        <img src="assets/favicon.svg" alt="" class="logo" width="26" height="26">
+        <span class="brand-name">HookScope</span>
+      </a>
+      <p class="privacy">No upload. No server. No API keys.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="intake" class="intake">
+      <div class="lead">
+        <h1>Is this email a phish?</h1>
+        <p>Drop the message file into the frame. HookScope checks the sender, the links, the attachments and the wording, then lists what it found, why it matters, and which indicators to block.</p>
+        <p class="note">The file is read by this page only. A strict Content Security Policy stops the page from sending it anywhere.</p>
+      </div>
+
+      <label id="dropzone" class="dropzone" for="file">
+        <input id="file" type="file" accept=".eml,.txt,message/rfc822" hidden>
+        <span class="drop-title">Drop an <code>.eml</code> file here</span>
+        <span class="drop-sub">or click to browse. Up to 40 MB.</span>
+        <span class="drop-foot">Read locally. Never uploaded.</span>
+      </label>
+    </section>
+
+    <section class="lower">
+      <div class="specimens">
+        <h2 class="label">Test specimens</h2>
+        <ol class="specimen-list">
+          <li><button class="specimen" type="button" data-sample="maybank-credential-phish.eml"><span class="no">01</span><span class="what"><b>Bank credential phish</b><span>Look-alike bank domain, Malay urgency text, link text that lies, DMARC fail</span></span><span class="go">Open</span></button></li>
+          <li><button class="specimen" type="button" data-sample="microsoft-html-smuggling.eml"><span class="no">02</span><span class="what"><b>HTML smuggling attachment</b><span>Builds a file from hidden data and posts passwords to a Telegram bot</span></span><span class="go">Open</span></button></li>
+          <li><button class="specimen" type="button" data-sample="ceo-fraud-macro-docm.eml"><span class="no">03</span><span class="what"><b>CEO fraud with macro file</b><span>Boss impersonation from Gmail, remote template, locked zip with a .pdf.exe</span></span><span class="go">Open</span></button></li>
+          <li><button class="specimen" type="button" data-sample="user-report-forward.eml"><span class="no">04</span><span class="what"><b>User report, forwarded</b><span>A staff member sends the bank phish to the SOC as an attachment</span></span><span class="go">Open</span></button></li>
+          <li><button class="specimen" type="button" data-sample="legit-newsletter.eml"><span class="no">05</span><span class="what"><b>Normal newsletter</b><span>Real mail, to show the tool stays quiet when there is nothing wrong</span></span><span class="go">Open</span></button></li>
+        </ol>
+        <p class="note">All five are harmless. The domains are made up and the Telegram token is fake.</p>
+      </div>
+
+      <div class="other-ways">
+        <h2 class="label">Other ways in</h2>
+        <details class="paste">
+          <summary>Paste the raw email source</summary>
+          <textarea id="paste" spellcheck="false" placeholder="Paste the full original message, starting with the headers (Received:, From:, Subject: ...)"></textarea>
+          <button id="paste-go" class="btn primary" type="button">Analyze pasted source</button>
+        </details>
+        <details class="howto">
+          <summary>How do I get the .eml file?</summary>
+          <ul>
+            <li><b>Gmail:</b> open the email, click the three dots, then <i>Download message</i>.</li>
+            <li><b>Outlook on the web:</b> open the email, click the three dots, then <i>Save as</i> or <i>Download</i>.</li>
+            <li><b>Outlook desktop:</b> drag the email to your desktop. If it saves as <code>.msg</code>, use <i>View source</i> and paste it here instead.</li>
+            <li><b>Thunderbird or Apple Mail:</b> <i>File</i>, then <i>Save As</i> (raw message source).</li>
+          </ul>
+        </details>
+        <p id="error" class="error" hidden></p>
+      </div>
+    </section>
+
+    <section id="results" hidden></section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <details>
+        <summary>How the score works</summary>
+        <div class="score-grid">
+          <table class="score-table">
+            <thead><tr><th>Each finding adds</th><th>Points</th></tr></thead>
+            <tbody>
+              <tr><td>Critical</td><td>40</td></tr>
+              <tr><td>High</td><td>25</td></tr>
+              <tr><td>Medium</td><td>12</td></tr>
+              <tr><td>Low</td><td>5</td></tr>
+              <tr><td>Info</td><td>0</td></tr>
+            </tbody>
+          </table>
+          <table class="score-table">
+            <thead><tr><th>Total score</th><th>Verdict</th></tr></thead>
+            <tbody>
+              <tr><td>0 to 14</td><td>Low risk</td></tr>
+              <tr><td>15 to 39</td><td>Suspicious</td></tr>
+              <tr><td>40 to 69</td><td>Likely phishing</td></tr>
+              <tr><td>70 to 100</td><td>Phishing / malicious</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">The total is capped at 100. Passing SPF, DKIM and DMARC does not lower the score, because a scammer can pass all three on a domain they own.</p>
+      </details>
+      <p class="note">HookScope <span id="ver"></span>. MIT licence. A guide for a human analyst, not a final decision.</p>
+    </div>
+  </footer>
+</body>
+</html>

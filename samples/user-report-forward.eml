@@ -1,0 +1,77 @@
+Received: from laptop-aina (10.1.4.22) by mail.unifi-mail.example; Mon, 23 Nov 2026 09:40:12 +0800
+From: Aina Rahman <aina.rahman@unifi-mail.example>
+To: soc@unifi-mail.example
+Subject: Suspicious email - is this real?
+Date: Mon, 23 Nov 2026 09:40:00 +0800
+Message-ID: <report-1182@unifi-mail.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="rep5"
+
+--rep5
+Content-Type: text/plain; charset=utf-8
+
+Hi SOC team, I got this email this morning. I did not click anything. Can you check?
+
+--rep5
+Content-Type: message/rfc822; name="Akaun anda akan disekat.eml"
+Content-Disposition: attachment; filename="Akaun anda akan disekat.eml"
+
+Return-Path: <bounce-77812@mail-relay7.top>
+Received: from mx.unifi-mail.example (mx.unifi-mail.example [10.20.0.5])
+	by inbox.unifi-mail.example with LMTP; Mon, 23 Nov 2026 09:14:05 +0800
+Authentication-Results: mx.unifi-mail.example;
+	spf=softfail (domain of transitioning bounce-77812@mail-relay7.top does not designate 185.234.72.19 as permitted sender) smtp.mailfrom=mail-relay7.top;
+	dkim=none (message not signed);
+	dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=rnaybank2u-secure.com
+Received: from vps-2291.mail-relay7.top (vps-2291.mail-relay7.top [185.234.72.19])
+	by mx.unifi-mail.example (Postfix) with ESMTP id 4F2A1C0
+	for <aina.rahman@unifi-mail.example>; Mon, 23 Nov 2026 09:14:02 +0800
+Received: from localhost (localhost [127.0.0.1])
+	by vps-2291.mail-relay7.top (Postfix) with ESMTPA; Mon, 23 Nov 2026 01:13:58 +0000
+From: "Maybank2u Security" <alert@rnaybank2u-secure.com>
+Reply-To: maybank2u.helpdesk@gmail.com
+To: aina.rahman@unifi-mail.example
+Subject: =?UTF-8?B?UkU6IEFrYXVuIGFuZGEgYWthbiBkaXNla2F0IOKaoO+4jw==?=
+Date: Mon, 23 Nov 2026 09:13:51 +0800
+Message-ID: <20261123011351.4471@vps-2291.mail-relay7.top>
+X-Mailer: PHPMailer 6.8.0 (https://github.com/PHPMailer/PHPMailer)
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="b1_5f9c2a"
+
+--b1_5f9c2a
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Pelanggan yang dihormati,
+
+Kami mengesan aktiviti luar biasa pada akaun anda. Akaun anda akan disekat dalam masa 24 jam.
+Sila log masuk dan sahkan akaun anda: http://rnaybank2u.com.my.secure-login.xyz/m2u/verify?session=8f3a2b
+
+Maybank2u Security Team
+
+--b1_5f9c2a
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><body style=3D"font-family:Arial">
+<div style=3D"display:none;font-size:0">Hello friend, this is a normal news=
+letter about gardening and weather updates.</div>
+<p><img src=3D"https://rnaybank2u-secure.com/logo.png" width=3D"120" height=
+=3D"40" alt=3D"Maybank2u"></p>
+<p>Pelanggan yang dihormati,</p>
+<p>Kami mengesan aktiviti luar biasa pada akaun anda. Akaun anda <b>akan di=
+sekat</b> dalam masa 24 jam
+jika anda tidak mengambil <b>tindakan segera</b>.</p>
+<p>Sila log masuk dan sahkan akaun anda di pautan rasmi kami:</p>
+<p><a href=3D"http://rnaybank2u.com.my.secure-login.xyz/m2u/verify?session=
+=3D8f3a2b">https://www.maybank2u.com.my</a></p>
+<p>Atau imbas: <a href=3D"https://bit.ly/3xM2uVerify">klik di sini</a></p>
+<p>Dear customer, we detected unusual activity. Please verify your account =
+immediately to avoid suspension.</p>
+<p>Maybank2u Security Team</p>
+<img src=3D"https://rnaybank2u-secure.com/t.gif?id=3D88231" width=3D"1" hei=
+ght=3D"1">
+</body></html>
+--b1_5f9c2a--
+
+--rep5--

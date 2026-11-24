@@ -1,0 +1,35 @@
+Received: from smtp.kopirawang.example (smtp.kopirawang.example [203.0.113.25])
+	by mx.unifi-mail.example with ESMTPS; Fri, 20 Nov 2026 10:00:04 +0800
+Authentication-Results: mx.unifi-mail.example;
+	spf=pass smtp.mailfrom=news.kopirawang.example;
+	dkim=pass header.d=kopirawang.example header.s=s1;
+	dmarc=pass (p=REJECT) header.from=kopirawang.example
+DKIM-Signature: v=1; a=rsa-sha256; d=kopirawang.example; s=s1; h=from:to:subject; bh=abc=; b=def=
+From: Kopi Rawang <hello@kopirawang.example>
+To: Aina Rahman <aina.rahman@unifi-mail.example>
+Subject: New this week: Gula Melaka Latte
+Date: Fri, 20 Nov 2026 10:00:00 +0800
+Message-ID: <weekly-2026-47@kopirawang.example>
+List-Unsubscribe: <https://kopirawang.example/unsubscribe?u=a91>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="alt4"
+
+--alt4
+Content-Type: text/plain; charset=utf-8
+
+Hi Aina, our new Gula Melaka Latte is here. Come try it this weekend at our Rawang outlet.
+Menu: https://kopirawang.example/menu
+
+--alt4
+Content-Type: text/html; charset=utf-8
+
+<html><body>
+<span style="display:none">Kopi baru minggu ini: Gula Melaka Latte</span>
+<h2>Kopi Rawang Weekly</h2>
+<p>Hi Aina, our new Gula Melaka Latte is here. Come try it this weekend at our Rawang outlet.</p>
+<p><a href="https://kopirawang.example/menu">See the menu</a> | <a href="https://kopirawang.example/outlets">kopirawang.example/outlets</a></p>
+<p>Follow us on <a href="https://www.instagram.com/kopirawang">Instagram</a>.</p>
+<p style="font-size:11px;color:#888">You are receiving this because you joined our member list.
+<a href="https://kopirawang.example/unsubscribe?u=a91">Unsubscribe</a></p>
+</body></html>
+--alt4--
