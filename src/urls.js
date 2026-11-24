@@ -28,7 +28,10 @@ export const URL_FLAG_INFO = {
   'deep-subdomain': { sev: 'low', title: 'Link has an unusually long chain of subdomains' },
   'odd-port': { sev: 'low', title: 'Link uses an unusual network port' },
   'ipfs': { sev: 'medium', title: 'Link is hosted on IPFS, which is hard to take down' },
+  'chat-handoff': { sev: 'low', title: 'Link moves the conversation to WhatsApp or Telegram, away from email filters' },
 };
+
+const CHAT_HOSTS = new Set(['wa.me', 'api.whatsapp.com', 'chat.whatsapp.com', 't.me', 'telegram.me']);
 
 const BENIGN_HOSTS = new Set(['www.w3.org', 'w3.org', 'schemas.microsoft.com', 'schemas.openxmlformats.org', 'purl.org', 'ns.adobe.com', 'www.apple.com/dtds']);
 
@@ -69,6 +72,7 @@ export function analyzeUrl(rawInput) {
   if (bc && (bc.type === 'homoglyph' || bc.type === 'typosquat')) add('lookalike', `imitates ${bc.brand} (${bc.target})`);
   else if (bc && bc.type === 'brand-keyword' && !SHORTENERS.has(host)) add('brand-keyword', `mentions ${bc.brand}`);
   if (host === 'api.telegram.org') add('telegram');
+  if (CHAT_HOSTS.has(host)) add('chat-handoff', host);
   if (RISKY_DOWNLOAD.test(u.pathname)) add('risky-download', u.pathname.split('/').pop());
   if (isFreeHosting(host)) add('free-hosting', registrable);
   if (/(^|\.)ipfs\.|\/ipfs\/|ipfs\.io|dweb\.link/i.test(host + u.pathname)) add('ipfs');

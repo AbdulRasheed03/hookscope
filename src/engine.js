@@ -138,11 +138,20 @@ export async function analyzeEmail(input, opts = {}) {
   }
 
   // Wording.
+  // Real brands write things like "we will never ask for your TAC code", which trips the keyword rules.
+  // When the email provably comes from the brand's own domain (DMARC pass, not free webmail),
+  // wording is shown for context but not scored. Link, sender and attachment checks still count.
+  const fromDom = hdr.from?.domain || '';
+  const verifiedBrand = hdr.auth.dmarc === 'pass' && !FREEMAIL.has(fromDom) ? officialBrand(fromDom) : null;
   const subjectAndBody = `${hdr.subject}\n${bodyText}`;
   for (const g of analyzeContent(subjectAndBody)) {
-    add({ id: 'words-' + g.id, category: 'Content', sev: g.sev, title: g.title, detail: `Found: ${g.found.slice(0, 6).map((w) => `"${w}"`).join(', ')}` });
+    const found = `Found: ${g.found.slice(0, 6).map((w) => `"${w}"`).join(', ')}`;
+    add({
+      id: 'words-' + g.id, category: 'Content', sev: verifiedBrand ? 'info' : g.sev, title: g.title,
+      detail: verifiedBrand ? `${found}. Not scored: the email is verified as coming from ${verifiedBrand.name}'s own domain.` : found,
+    });
   }
-  if (findings.some((f) => f.id === 'words-credentials') && urls.some((u) => u.flags.some((f) => ['lookalike', 'brand-keyword', 'free-hosting', 'shortener', 'ip-host'].includes(f.id)))) {
+  if (!verifiedBrand && findings.some((f) => f.id === 'words-credentials') && urls.some((u) => u.flags.some((f) => ['lookalike', 'brand-keyword', 'free-hosting', 'shortener', 'ip-host'].includes(f.id)))) {
     add({ id: 'combo-credential-link', category: 'Content', sev: 'high', title: 'Asks you to log in and links to a website that is not the real one', detail: 'This is the classic shape of a credential phishing email.', mitre: 'T1566.002' });
   }
 
@@ -210,7 +219,8 @@ function countBySev(findings) {
   return c;
 }
 
-const INFRA = new Set(['api.telegram.org', 'discord.com', 'discordapp.com']);
+// Shared platforms: listing them as domain IOCs would make people block the whole service.
+const INFRA = new Set(['api.telegram.org', 't.me', 'telegram.me', 'discord.com', 'discordapp.com']);
 
 function collectIocs(hdr, urls, attachments) {
   const domains = new Set();
@@ -228,6 +238,9 @@ function collectIocs(hdr, urls, attachments) {
     if (!u.host) continue;
     if (isIP(u.host)) ips.add(u.host);
     else addDomain(u.host);
+    // The real destination hidden behind an open redirect (for example google.com/url?q=...).
+    const redirect = u.flags.find((f) => f.id === 'redirect');
+    if (redirect?.note) { if (isIP(redirect.note)) ips.add(redirect.note); else addDomain(redirect.note); }
     if (u.flags.length || !officialBrand(u.host)) iocUrls.push(u.url);
   }
   return {

@@ -5,11 +5,11 @@ import { wordRegex } from './util.js';
 export const PHRASE_GROUPS = [
   {
     id: 'urgency', sev: 'low', title: 'Pressure or urgency language',
-    words: ['urgent', 'immediately', 'within 24 hours', 'within 48 hours', 'will be suspended', 'has been suspended', 'temporarily locked', 'will be closed', 'will be deactivated', 'final notice', 'final warning', 'action required', 'act now', 'expires today', 'last chance', 'segera', 'dalam masa 24 jam', 'akan disekat', 'telah disekat', 'akan digantung', 'tindakan segera', 'notis terakhir', 'amaran terakhir', 'akan ditamatkan'],
+    words: ['urgent', 'immediately', 'within 24 hours', 'within 48 hours', 'will be suspended', 'has been suspended', 'temporarily locked', 'will be closed', 'will be deactivated', 'final notice', 'final warning', 'action required', 'act now', 'expires today', 'last chance', 'segera', 'dalam masa 24 jam', 'akan disekat', 'telah disekat', 'akan digantung', 'telah digantung', 'akan dibekukan', 'telah dibekukan', 'tindakan segera', 'notis terakhir', 'amaran terakhir', 'akan ditamatkan'],
   },
   {
     id: 'credentials', sev: 'medium', title: 'Asks you to log in or confirm personal details',
-    words: ['verify your account', 'verify your identity', 'confirm your password', 'confirm your account', 'confirm your identity', 'update your payment', 'update your account', 'update your details', 'unusual sign-in', 'unusual activity', 'reset your password', 're-enter your', 'log in to your account', 'login to your account', 'sign in to your account', 'validate your', 'sahkan akaun', 'sahkan identiti', 'kemas kini maklumat', 'kemaskini maklumat', 'log masuk', 'kata laluan', 'nombor tac', 'kod tac', 'nombor kad', 'nombor ic'],
+    words: ['verify your account', 'verify your identity', 'confirm your password', 'confirm your account', 'confirm your identity', 'update your payment', 'update your account', 'update your details', 'unusual sign-in', 'unusual activity', 'reset your password', 're-enter your', 'log in to your account', 'login to your account', 'sign in to your account', 'validate your', 'sahkan akaun', 'sahkan identiti', 'kemas kini maklumat', 'kemaskini maklumat', 'log masuk', 'kata laluan', 'nombor tac', 'kod tac', 'nombor kad', 'nombor ic', 'nombor kad pengenalan', 'no. kad pengenalan', 'nombor akaun bank', 'butiran bank'],
   },
   {
     id: 'money', sev: 'low', title: 'Payment, invoice or refund lure',
@@ -30,6 +30,11 @@ export const PHRASE_GROUPS = [
   {
     id: 'delivery', sev: 'low', title: 'Parcel delivery problem lure',
     words: ['delivery failed', 'unable to deliver', 'parcel is on hold', 'customs fee', 'redelivery', 'shipment on hold', 'bungkusan anda', 'penghantaran gagal', 'caj kastam'],
+  },
+  {
+    // Part-time job and "task" scams: like or review products for a commission, then pay a deposit to unlock bigger tasks.
+    id: 'job', sev: 'medium', title: 'Easy money job or task offer (part-time job and task scams)',
+    words: ['part-time job', 'part time job', 'work from home', 'daily commission', 'simple tasks', 'like and follow', 'no experience needed', 'kerja sambilan', 'kerja dari rumah', 'komisen harian', 'gaji harian', 'pendapatan sampingan', 'tugasan mudah', 'tiada pengalaman diperlukan', 'deposit pertama'],
   },
 ];
 

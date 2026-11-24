@@ -1,0 +1,46 @@
+Return-Path: <shopee.hr.recruit.my@outlook.com>
+Received: from mx.unifi-mail.example (mx.unifi-mail.example [10.20.0.5])
+	by inbox.unifi-mail.example with LMTP; Fri, 20 Nov 2026 14:03:18 +0800
+Authentication-Results: mx.unifi-mail.example;
+	spf=pass (domain of shopee.hr.recruit.my@outlook.com designates 40.92.0.10 as permitted sender) smtp.mailfrom=outlook.com;
+	dkim=pass header.d=outlook.com header.s=selector1;
+	dmarc=pass (p=NONE) header.from=outlook.com
+Received: from APC01-SG2-obe.outbound.protection.outlook.com (mail-sg2apc01olkn2010.outbound.protection.outlook.com [40.92.0.10])
+	by mx.unifi-mail.example (Postfix) with ESMTPS id 1F2E3D4
+	for <undisclosed-recipients>; Fri, 20 Nov 2026 14:03:15 +0800
+From: "Shopee HR Recruitment" <shopee.hr.recruit.my@outlook.com>
+To: undisclosed-recipients:;
+Subject: Kerja sambilan dari rumah: gaji harian RM150 - RM350
+Date: Fri, 20 Nov 2026 14:03:05 +0800
+Message-ID: <SG2PR01MB4471A8C3@SG2PR01MB4471.apcprd01.prod.outlook.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="job05"
+
+--job05
+Content-Type: text/plain; charset=utf-8
+
+Hai,
+
+Kami sedang mencari 50 orang untuk kerja sambilan dari rumah bersama Shopee.
+Tugasan mudah: like dan follow kedai Shopee, kemudian hantar tangkapan skrin. Tiada pengalaman diperlukan.
+
+Gaji harian RM150 - RM350. Komisen harian dibayar terus ke akaun bank anda.
+
+Hubungi penyelia kami di WhatsApp untuk mula hari ini: https://wa.me/60123456789
+Atau sertai kumpulan Telegram: https://t.me/shopee_tugasan_my
+
+Tempat terhad.
+
+--job05
+Content-Type: text/html; charset=utf-8
+
+<html><body style="font-family:Arial,sans-serif">
+<p>Hai,</p>
+<p>Kami sedang mencari 50 orang untuk <b>kerja sambilan dari rumah</b> bersama Shopee.</p>
+<p>Tugasan mudah: like dan follow kedai Shopee, kemudian hantar tangkapan skrin. Tiada pengalaman diperlukan.</p>
+<p><b>Gaji harian RM150 - RM350.</b> Komisen harian dibayar terus ke akaun bank anda.</p>
+<p><a href="https://wa.me/60123456789">Hubungi penyelia kami di WhatsApp</a> untuk mula hari ini,
+atau <a href="https://t.me/shopee_tugasan_my">sertai kumpulan Telegram</a>.</p>
+<p>Tempat terhad.</p>
+</body></html>
+--job05--

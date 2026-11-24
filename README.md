@@ -24,9 +24,9 @@ Most phishing analysis tools either need paid API keys, upload your email to som
 | **Sender** | Look-alike domains (`rnaybank2u`, `micros0ft`, `pаypal` with a Cyrillic "а"), brand name in a domain the brand does not own, display name pretending to be a brand or showing a fake email address, Reply-To that sends your answer somewhere else, senior titles (CEO, Datuk, Director) on free webmail |
 | **Authentication** | Reads SPF, DKIM and DMARC results recorded by the receiving server, and checks if they line up with the From address |
 | **Delivery route** | Rebuilds the hop-by-hop path from the `Received` headers, finds the origin IP, flags odd timestamps |
-| **Links** | Link text that shows one site but opens another, the `@` trick, raw and disguised IPs, punycode, URL shorteners, free hosting often abused for phishing (pages.dev, web.app, ipfs and more), redirects, risky downloads including Android `.apk`, Telegram bot links |
+| **Links** | Link text that shows one site but opens another, the `@` trick, raw and disguised IPs, punycode, URL shorteners, free hosting often abused for phishing (pages.dev, web.app, ipfs and more), redirects, risky downloads including Android `.apk`, Telegram bot links, links that move the chat to WhatsApp or Telegram |
 | **Attachments** | Real file type vs file name, fake double extensions (`invoice.pdf.html`), hidden right-to-left characters, macros in Office files (new and old format), remote template injection, password protected archives and what is inside them, PDF JavaScript and auto actions, RTF exploits, HTML smuggling, fake login pages, ISO and LNK files, SHA-256 and SHA-1 hashes |
-| **Content** | Pressure, login requests, payment and invoice lures, prizes, gift card requests, parcel scams, in **English and Bahasa Malaysia**. Fake "RE:" subjects, hidden text, forms and scripts inside the email |
+| **Content** | Pressure, login requests, payment and invoice lures, prizes, gift card requests, parcel scams, part-time job and task scams, in **English and Bahasa Malaysia**. Fake "RE:" subjects, hidden text, forms and scripts inside the email |
 | **Reported emails** | If a user forwards a phishing email "as attachment", HookScope analyzes the attached email too |
 
 Every finding has a severity, a plain-language explanation, the evidence, and a MITRE ATT&CK technique ID where one applies.
@@ -89,7 +89,7 @@ Passing SPF, DKIM and DMARC does **not** lower the score. A scammer who register
 
 ## Sample emails
 
-The `samples` folder has five safe test emails. They contain no real malware, the links point to made-up domains, and the Telegram bot token is fake.
+The `samples` folder has eleven safe test emails. They contain no real malware, the links point to made-up domains, the IP addresses come from ranges reserved for documentation (RFC 5737), and the Telegram bot token is fake. Each one has its own test in `tests/engine.test.mjs`.
 
 | File | What it shows |
 |:--|:--|
@@ -98,6 +98,23 @@ The `samples` folder has five safe test emails. They contain no real malware, th
 | `ceo-fraud-macro-docm.eml` | Boss impersonation from Gmail, macro document with remote template, locked zip with `.pdf.exe` |
 | `user-report-forward.eml` | A staff member forwarding the bank phish to the SOC as an attachment |
 | `legit-newsletter.eml` | A normal newsletter, to show the tool stays quiet on real mail |
+
+### Malaysian scam set
+
+Built from the scams Malaysians actually report. Each one shows a different trick, not the same email with a new logo.
+
+| File | Lure | Trick it shows |
+|:--|:--|:--|
+| `lhdn-tax-refund-form.eml` | LHDN *bayaran balik cukai* (tax refund) of RM1,284.50 | Passes SPF, DKIM **and** DMARC because the scammer owns the domain. Still scores 100: a banking password box inside the email, link text that says `mytax.hasil.gov.my` but opens a free `web.app` site |
+| `poslaju-customs-fee.eml` | Pos Laju parcel held for RM2.80 *caj kastam* | A tiny fee to steal a card number and TAC, a URL shortener, and a `google.com/url?q=` open redirect. The real destination is pulled out as an IOC |
+| `tng-ewallet-apk-update.eml` | Touch 'n Go eWallet "mandatory update" | `tngdlgital.com.my` (l for i) pushing an Android `.apk`, with link text dressed as a Google Play address |
+| `kwsp-akaun-fleksibel-at-trick.eml` | KWSP Akaun Fleksibel withdrawal "approved" | The `@` trick: `https://www.kwsp.gov.my@198.51.100.47/...` reads as KWSP but opens a raw IP address |
+| `shopee-task-job-scam.eml` | Shopee part-time job, RM350 a day to like and follow | Task scam with no bad link at all. Caught by job wording, a brand name on an Outlook.com account, and the hand-off to WhatsApp and Telegram |
+| `legit-pos-malaysia-tracking.eml` | Real Pos Malaysia tracking notice | Control. Its footer says "we never ask for payment, card number or TAC", which must not count against it |
+
+### Real brands that say "we never ask for your TAC"
+
+Banks and couriers often warn customers in the same words a scam uses. When an email provably comes from a brand's own domain (DMARC passes and it is not free webmail), HookScope still shows the wording but does not score it. Sender, link and attachment checks always count. A spoofed `@pos.com.my` email that fails DMARC gets no such pass, and there is a test for exactly that.
 
 ## Project layout
 

